@@ -1,0 +1,17 @@
+{
+  "name": "durable-agent-runtime-contract",
+  "description": "Portable checklist and starter for reviewing long-running agent runtime behavior.",
+  "canonical_article_url": "https://ankitkumar3514.substack.com/p/durable-agent-runtime-contract",
+  "public_repo_url": "https://github.com/ankitforce/durable-agent-runtime-contract",
+  "read_order": [
+    "README.md",
+    "AGENTS.md",
+    "checklists/runtime-contract-review.md",
+    "templates/runtime-contract.example.yaml"
+  ],
+  "safety_boundaries": [
+    "No secrets or live credentials.",
+    "No deployment authority is implied.",
+    "Approval boundaries must remain explicit."
+  ]
+}

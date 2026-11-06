@@ -1,0 +1,26 @@
+workflow:
+  name: example-customer-update
+  owner: team-name
+  task_id: externally-supplied-stable-id
+  policy_version: 1
+state:
+  durable_store: required
+  checkpoints:
+    - before_external_action
+    - after_external_action
+authority:
+  allowed_tools:
+    - approved-data-lookup
+  approval_required_for:
+    - customer_message_send
+recovery:
+  idempotency_key: task_id-plus-action-name
+  on_crash: resume_from_last_durable_checkpoint
+  on_duplicate_request: return_existing_outcome
+evidence:
+  retain:
+    - inputs
+    - tool_calls
+    - approval_decision
+    - validation_result
+    - final_outcome
